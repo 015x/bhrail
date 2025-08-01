@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brianrail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400;1,6..12,600;1,6..12,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'background': '#FDFDFB',
+              'text-primary': '#1A1A1A',
+              'text-secondary': '#5B5B5B',
+              'accent': '#85A4C3',
+              'accent-dark': '#6A86A4',
+            },
+            fontFamily: {
+              'sans': ['Nunito Sans', 'sans-serif'],
+              'serif': ['Playfair Display', 'serif'],
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+      .page-content {
+        display: none;
+      }
+      .page-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-background font-sans text-text-primary antialiased">
+    <div class="flex flex-col min-h-screen bg-background">
+      <!-- Navbar -->
+      <header class="sticky top-0 z-50 bg-background/80 backdrop-blur-md shadow-sm">
+        <nav class="container mx-auto flex items-center justify-between p-4 max-w-7xl">
+          <div id="logo-link" class="font-serif text-2xl font-bold tracking-wider cursor-pointer">
+            BRIANRAIL
+          </div>
+          <div class="flex items-center space-x-2 md:space-x-4">
+            <button data-page="about" class="nav-link group relative px-3 py-2 text-sm font-semibold text-text-primary hover:text-accent transition-colors duration-300">
+              About
+              <span class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-accent transition-all duration-300 w-0 group-hover:w-1/2"></span>
+            </button>
+            <button data-page="art" class="nav-link group relative px-3 py-2 text-sm font-semibold text-text-primary hover:text-accent transition-colors duration-300">
+              Art
+              <span class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-accent transition-all duration-300 w-0 group-hover:w-1/2"></span>
+            </button>
+            <button data-page="contact" class="nav-link group relative px-3 py-2 text-sm font-semibold text-text-primary hover:text-accent transition-colors duration-300">
+              Contact
+              <span class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-accent transition-all duration-300 w-0 group-hover:w-1/2"></span>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
+        
+        <!-- About Page -->
+        <div id="page-about" class="page-content animate-fade-in space-y-20 md:space-y-28">
+          <section class="grid md:grid-cols-5 gap-12 items-center">
+              <div class="md:col-span-3">
+                  <h1 class="font-serif text-5xl md:text-6xl text-text-primary leading-tight">
+                      Consultant & Artist
+                  </h1>
+                  <p class="mt-4 text-lg text-text-secondary max-w-2xl leading-relaxed">
+                      A multidisciplinary professional exploring the intersections of railway infrastructure, climate science, and creative expression.
+                  </p>
+              </div>
+              <div class="md:col-span-2">
+                  <img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/IMG-20250324-WA0003.jpg" alt="Brian" class="rounded-lg shadow-xl w-full h-auto object-cover aspect-square">
+              </div>
+          </section>
+
+          <section>
+              <h2 class="font-serif text-4xl text-text-primary text-center mb-12">Core Philosophy</h2>
+              <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                  <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                      <h3 class="font-serif text-2xl text-text-primary mb-3">Analytical Rigor</h3>
+                      <p class="text-text-secondary leading-relaxed">
+                          Every challenge, whether in rail logistics or climate modeling, is approached with a commitment to data-driven analysis and first-principles thinking. I believe robust solutions are built on a foundation of empirical evidence and meticulous investigation.
+                      </p>
+                  </div>
+                  <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                      <h3 class="font-serif text-2xl text-text-primary mb-3">Creative Insight</h3>
+                      <p class="text-text-secondary leading-relaxed">
+                         Technical expertise alone is not enough. My work in the arts informs my consulting practice, allowing me to approach problems from unconventional angles, foster innovation, and design solutions that are not only efficient but also human-centered and elegant.
+                      </p>
+                  </div>
+                  <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                      <h3 class="font-serif text-2xl text-text-primary mb-3">Sustainable Vision</h3>
+                      <p class="text-text-secondary leading-relaxed">
+                         Underpinning all my work is a dedication to long-term resilience and environmental stewardship. I strive to develop strategies and create art that contribute positively to our collective future, balancing immediate needs with enduring impact.
+                      </p>
+                  </div>
+              </div>
+          </section>
+
+          <section>
+              <h2 class="font-serif text-4xl text-text-primary text-center mb-12">Career Journey</h2>
+              <div class="relative max-w-2xl mx-auto">
+                  <div class="absolute left-3 sm:left-1/2 w-0.5 h-full bg-accent/20"></div>
+                  <!-- Journey Item 1 -->
+                  <div class="relative pl-10 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-x-8">
+                      <div class="text-right sm:text-right">
+                          <div class="font-serif text-2xl text-accent">2010</div>
+                      </div>
+                      <div class="mt-2 sm:mt-0 sm:text-left">
+                          <div class="absolute left-1.5 sm:left-1/2 top-1 w-3 h-3 bg-accent rounded-full -translate-x-1/2"></div>
+                          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+                              <h4 class="font-semibold text-lg mb-1">BSc in Environmental Science</h4>
+                              <p class="text-text-secondary">Graduated with a focus on atmospheric physics and climate modeling.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Journey Item 2 -->
+                  <div class="relative pl-10 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-x-8">
+                      <div class="text-right sm:text-left sm:col-start-2">
+                          <div class="font-serif text-2xl text-accent">2012</div>
+                      </div>
+                      <div class="mt-2 sm:mt-0 sm:text-right sm:col-start-1 sm:row-start-1">
+                          <div class="absolute left-1.5 sm:left-1/2 top-1 w-3 h-3 bg-accent rounded-full -translate-x-1/2"></div>
+                          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+                              <h4 class="font-semibold text-lg mb-1">Graduate Scheme, Network Rail</h4>
+                              <p class="text-text-secondary">Began my career in rail, learning the fundamentals of operations and safety.</p>
+                          </div>
+                      </div>
+                  </div>
+                   <!-- Journey Item 3 -->
+                  <div class="relative pl-10 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-x-8">
+                      <div class="text-right sm:text-right">
+                          <div class="font-serif text-2xl text-accent">2015</div>
+                      </div>
+                      <div class="mt-2 sm:mt-0 sm:text-left">
+                          <div class="absolute left-1.5 sm:left-1/2 top-1 w-3 h-3 bg-accent rounded-full -translate-x-1/2"></div>
+                          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+                              <h4 class="font-semibold text-lg mb-1">Scheme Project Manager</h4>
+                              <p class="text-text-secondary">Managed infrastructure upgrade projects, specializing in signalling and track renewal.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Journey Item 4 -->
+                  <div class="relative pl-10 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-x-8">
+                      <div class="text-right sm:text-left sm:col-start-2">
+                          <div class="font-serif text-2xl text-accent">2018</div>
+                      </div>
+                      <div class="mt-2 sm:mt-0 sm:text-right sm:col-start-1 sm:row-start-1">
+                          <div class="absolute left-1.5 sm:left-1/2 top-1 w-3 h-3 bg-accent rounded-full -translate-x-1/2"></div>
+                          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+                              <h4 class="font-semibold text-lg mb-1">Independent Consultant</h4>
+                              <p class="text-text-secondary">Started providing specialized consultancy on rail standards and climate resilience.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Journey Item 5 -->
+                   <div class="relative pl-10 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-x-8">
+                      <div class="text-right sm:text-right">
+                          <div class="font-serif text-2xl text-accent">Present</div>
+                      </div>
+                      <div class="mt-2 sm:mt-0 sm:text-left">
+                          <div class="absolute left-1.5 sm:left-1/2 top-1 w-3 h-3 bg-accent rounded-full -translate-x-1/2"></div>
+                          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+                              <h4 class="font-semibold text-lg mb-1">Multidisciplinary Expert</h4>
+                              <p class="text-text-secondary">Integrating rail consultancy with climate science and creative pursuits.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <section>
+              <h2 class="font-serif text-4xl text-text-primary text-center mb-12">Previous Projects</h2>
+              <div class="grid md:grid-cols-3 gap-8">
+                  <!-- Project 1 -->
+                  <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden group">
+                      <img src="https://picsum.photos/seed/project1/600/400" alt="ERTMS Rollout Analysis" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                      <div class="p-6">
+                          <h3 class="font-semibold text-lg text-text-primary mb-2">ERTMS Rollout Analysis</h3>
+                          <p class="text-text-secondary text-sm mb-4">Led a feasibility study for ETCS Level 2 implementation on a major UK route, focusing on capacity and operational benefits.</p>
+                          <div class="flex flex-wrap gap-2">
+                              <span class="text-xs font-semibold text-accent-dark bg-accent/10 px-2 py-1 rounded-full">ERTMS</span>
+                              <span class="text-xs font-semibold text-accent-dark bg-accent/10 px-2 py-1 rounded-full">Signalling</span>
+                              <span class="text-xs font-semibold text-accent-dark bg-accent/10 px-2 py-1 rounded-full">Analysis</span>
+                          </div>
+                      </div>
+                  </div>
+                   <!-- Project 2 -->
+                  <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden group">
+                      <img src="https://picsum.photos/seed/project2/600/400" alt="Climate Resilience Framework" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                      <div class="p-6">
+                          <h3 class="font-semibold text-lg text-text-primary mb-2">Climate Resilience Framework</h3>
+                          <p class="text-text-secondary text-sm mb-4">Developed a risk assessment framework for Network Rail assets against extreme weather events, informing future investment.</p>
+                          <div class="flex flex-wrap gap-2">
+                              <span class="text-xs font-semibold text-accent-dark bg-accent/10 px-2 py-1 rounded-full">Climate</span>
+                              <span class="text-xs font-semibold text-accent-dark bg-accent/10 px-2 py-1 rounded-full">Risk</span>
+                              <span class="text-xs font-semibold text-accent-dark bg-accent/10 px-2 py-1 rounded-full">Strategy</span>
+                          </div>
+                      </div>
+                  </div>
+                   <!-- Project 3 -->
+                  <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden group">
+                      <img src="https://picsum.photos/seed/project3/600/400" alt="Operational Efficiency Audit" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                      <div class="p-6">
+                          <h3 class="font-semibold text-lg text-text-primary mb-2">Operational Efficiency Audit</h3>
+                          <p class="text-text-secondary text-sm mb-4">Audited a key freight corridor to identify timetable and infrastructure enhancements, resulting in a 15% efficiency gain.</p>
+                          <div class="flex flex-wrap gap-2">
+                              <span class="text-xs font-semibold text-accent-dark bg-accent/10 px-2 py-1 rounded-full">Operations</span>
+                              <span class="text-xs font-semibold text-accent-dark bg-accent/10 px-2 py-1 rounded-full">Efficiency</span>
+                              <span class="text-xs font-semibold text-accent-dark bg-accent/10 px-2 py-1 rounded-full">Freight</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+        </div>
+        
+        <!-- Art Page -->
+        <div id="page-art" class="page-content animate-fade-in space-y-20 md:space-y-28">
+           <section class="text-center max-w-3xl mx-auto">
+              <h1 class="font-serif text-5xl md:text-6xl text-text-primary">Art Gallery</h1>
+              <p class="mt-4 text-lg text-text-secondary leading-relaxed">
+                  A collection of works in digital paint, charcoal, and ink. My art explores the dialogue between natural phenomena and industrial forms, seeking beauty in structure and chaos alike.
+              </p>
+          </section>
+
+          <section class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              <div class="order-2 md:order-1">
+                  <h2 class="font-serif text-4xl text-text-primary mb-4">My Process</h2>
+                  <div class="text-text-secondary space-y-4">
+                      <p>My creative process is a blend of observation and introspection. It often begins with a photograph or a sketch from my travels—a striking piece of architecture or a fleeting atmospheric effect.</p>
+                      <p>In the studio, I translate these moments using tools that feel right for the subject, from the raw texture of charcoal for landscapes to the precise layers of digital paint for industrial forms. Each piece is an experiment in capturing not just a visual, but a feeling.</p>
+                  </div>
+              </div>
+              <div class="order-1 md:order-2">
+                  <img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_085355.jpg" alt="Artist's studio" class="rounded-lg shadow-xl object-cover">
+              </div>
+          </section>
+          
+          <!-- Art Piece Component Template -->
+          <div class="hidden group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]">
+            <img src="" alt="" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
+            <div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full">
+              <h3 class="font-serif text-xl font-bold"></h3>
+              <p class="text-sm opacity-90"></p>
+            </div>
+          </div>
+
+          <section>
+              <div class="text-center max-w-3xl mx-auto mb-12">
+                  <h2 class="font-serif text-4xl text-text-primary">Collection: Charcoal abstraction</h2>
+                  <p class="mt-2 text-text-secondary leading-relaxed">description.</p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                  <!-- Art Pieces -->
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_083509.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Charcoal</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_083607.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Charcoal</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_083611.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Charcoal</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_083734.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Charcoal</p></div></div>
+              </div>
+          </section>
+
+          <section>
+              <div class="text-center max-w-3xl mx-auto mb-12">
+                  <h2 class="font-serif text-4xl text-text-primary">Collection: Cybernetics</h2>
+                  <p class="mt-2 text-text-secondary leading-relaxed">description.</p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_090331.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Sketch</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_090207.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Sketch</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_090147.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Sketch</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_090121.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Sketch</p></div></div>
+              </div>
+          </section>
+
+          <section>
+              <div class="text-center max-w-3xl mx-auto mb-12">
+                  <h2 class="font-serif text-4xl text-text-primary">Collection: Abstract</h2>
+                  <p class="mt-2 text-text-secondary leading-relaxed">description.</p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_085240.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Paint</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_085301.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Paint</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_085355.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Paint</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_085326.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Paint</p></div></div>
+              </div>
+          </section>
+
+          <section>
+              <div class="text-center max-w-3xl mx-auto mb-12">
+                  <h2 class="font-serif text-4xl text-text-primary">Collection: Railway</h2>
+                  <p class="mt-2 text-text-secondary leading-relaxed">description.</p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_090246.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Charcoal</p></div></div>
+                  <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer aspect-[4/5]"><img src="https://raw.githubusercontent.com/015x/bhrail/refs/heads/main/pics/20240510_081318.jpg" alt="Title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div><div class="absolute bottom-0 left-0 p-4 md:p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 w-full"><h3 class="font-serif text-xl font-bold">Title</h3><p class="text-sm opacity-90">Charcoal</p></div></div>
+              </div>
+          </section>
+        </div>
+        
+        <!-- Contact Page -->
+        <div id="page-contact" class="page-content animate-fade-in space-y-20 md:space-y-24">
+           <section class="text-center max-w-3xl mx-auto">
+              <h1 class="font-serif text-5xl md:text-6xl text-text-primary">Get In Touch</h1>
+              <p class="mt-4 text-lg text-text-secondary leading-relaxed">
+                I'm always open to new opportunities and collaborations. Whether you have a project in mind, a question about my work, or just want to connect, I'd love to hear from you.
+              </p>
+            </section>
+            
+            <section class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+              <div class="space-y-6">
+                  <h2 class="font-serif text-3xl text-text-primary">Ways to Connect</h2>
+                  <p class="text-text-secondary">
+                      I'm currently available for a variety of engagements. Please feel free to reach out regarding:
+                  </p>
+                  <div class="space-y-3">
+                      <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
+                          <h3 class="font-semibold text-text-primary">Consulting Enquiries</h3>
+                          <p class="text-sm text-text-secondary">For projects related to rail, climate resilience, and operational strategy.</p>
+                      </div>
+                       <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
+                          <h3 class="font-semibold text-text-primary">Art Commissions</h3>
+                          <p class="text-sm text-text-secondary">To discuss custom artwork for personal or corporate collections.</p>
+                      </div>
+                       <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
+                          <h3 class="font-semibold text-text-primary">Speaking Opportunities</h3>
+                          <p class="text-sm text-text-secondary">Available to speak on topics at the intersection of infrastructure, climate, and art.</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="bg-white p-8 md:p-10 rounded-lg shadow-md border border-gray-100">
+                <form id="contact-form" class="space-y-6">
+                  <div>
+                    <label for="name" class="block text-sm font-semibold text-text-secondary mb-2">Full Name</label>
+                    <input type="text" id="name" required class="bg-white w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent/50 focus:border-accent focus:outline-none transition" />
+                  </div>
+                  <div>
+                    <label for="email" class="block text-sm font-semibold text-text-secondary mb-2">Email Address</label>
+                    <input type="email" id="email" required class="bg-white w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent/50 focus:border-accent focus:outline-none transition" />
+                  </div>
+                  <div>
+                    <label for="message" class="block text-sm font-semibold text-text-secondary mb-2">Message</label>
+                    <textarea id="message" rows="5" required class="bg-white w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent/50 focus:border-accent focus:outline-none transition"></textarea>
+                  </div>
+                  <div>
+                    <button type="submit" class="w-full flex justify-center items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-accent-dark transition-colors duration-300">
+                      Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </section>
+        </div>
+
+        <!-- Thank You Page -->
+        <div id="page-thank-you" class="page-content animate-fade-in text-center max-w-2xl mx-auto py-16">
+          <h1 class="font-serif text-4xl md:text-5xl text-text-primary">Thank You!</h1>
+          <p class="mt-4 text-lg text-text-secondary leading-relaxed">
+            Your message has been received. I appreciate you reaching out and will get back to you as soon as possible.
+          </p>
+          <button id="back-to-about-btn" class="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-accent-dark transition-colors duration-300">
+            Back to About
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-white border-t border-gray-100">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between p-6 text-sm text-text-secondary max-w-7xl">
+          <p>&copy; 2024 Brian. All rights reserved.</p>
+          <div class="flex items-center space-x-4 mt-4 md:mt-0">
+             <a href="mailto:hello@brian.com" aria-label="Email" class="hover:text-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+             </a>
+             <a href="#" aria-label="LinkedIn" class="hover:text-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+             </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page-content');
+        const logoLink = document.getElementById('logo-link');
+        const contactForm = document.getElementById('contact-form');
+        const backToAboutBtn = document.getElementById('back-to-about-btn');
+        const pageThankYou = document.getElementById('page-thank-you');
+
+        const setActiveNav = (pageName) => {
+          navLinks.forEach(link => {
+            const indicator = link.querySelector('.nav-indicator');
+            if (link.dataset.page === pageName) {
+              indicator.classList.add('w-1/2');
+            } else {
+              indicator.classList.remove('w-1/2');
+            }
+          });
+        };
+
+        const showPage = (pageName) => {
+          pages.forEach(page => {
+            if (page.id === `page-${pageName}`) {
+              page.classList.add('active');
+            } else {
+              page.classList.remove('active');
+            }
+          });
+          setActiveNav(pageName);
+           window.scrollTo(0, 0);
+        };
+
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const pageName = link.dataset.page;
+            showPage(pageName);
+          });
+        });
+
+        logoLink.addEventListener('click', () => {
+          showPage('about');
+        });
+        
+        backToAboutBtn.addEventListener('click', () => {
+          showPage('about');
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          showPage('thank-you');
+        });
+
+        // Show about page by default
+        showPage('about');
+      });
+    </script>
+  </body>
+</html>
