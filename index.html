@@ -9,25 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400;1,6..12,600;1,6..12,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'background': '#FDFDFB',
-              'text-primary': '#1A1A1A',
-              'text-secondary': '#5B5B5B',
-              'accent': '#85A4C3',
-              'accent-dark': '#6A86A4',
-            },
-            fontFamily: {
-              'sans': ['Nunito Sans', 'sans-serif'],
-              'serif': ['Playfair Display', 'serif'],
-            }
-          },
-        },
-      }
-    </script>
     <style>
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(10px); }
@@ -64,6 +45,26 @@
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
       }
     </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'background': '#FDFDFB',
+              'text-primary': '#1A1A1A',
+              'text-secondary': '#5B5B5B',
+              'accent': '#85A4C3',
+              'accent-dark': '#6A86A4',
+            },
+            fontFamily: {
+              'sans': ['Nunito Sans', 'sans-serif'],
+              'serif': ['Playfair Display', 'serif'],
+            }
+          },
+        },
+      }
+    </script>
+
   </head>
   <body class="bg-background font-sans text-text-primary antialiased">
     <div class="flex flex-col min-h-screen bg-background">
